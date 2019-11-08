@@ -7,13 +7,20 @@ function HeroList(props) {
     return (
         <>
         <button onClick={() => props.fetchHeroes()}>Meet The Heroes!</button>
-        {props.isFetching && <div>👻</div>}
+        {props.isFetching && <div>loading...</div>}
         {props.error && <div>{props.error.message}</div>}
-        <div>
+        <div className="hero-container">
             {props.heroes.map(hero => (
-                <p className="heroes" key={hero.id}>
-                    {hero.name}
-                </p>
+                <div className="heroes" key={hero.id}>
+                    <h2>{hero.name}</h2>
+                    <p>Real Name: {hero.real_name}</p>
+                    <div className="stats">
+                        <p className="health">Health: {hero.health}</p>
+                        <p className="armour">Armor: {hero.armour}</p>
+                        <p className="shield">Shield: {hero.shield}</p>
+                    </div>
+                    <p className="description">{hero.description}</p>
+                </div>
             ))}
         </div>
         </>

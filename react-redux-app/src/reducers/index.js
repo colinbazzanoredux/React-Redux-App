@@ -9,8 +9,8 @@ const initialState = {
     error: null,
     isFetching: false
  };
- function reducer(state = initialState, action) {
-    console.log('reducer', action);
+
+function reducer(state = initialState, action) {
     switch (action.type) {
         case FETCH_HEROES_LOADING:
             return {

@@ -20,7 +20,7 @@ export function fetchHeroes() {
        return fetch(`https://overwatch-api.net/api/v1/hero`)
        .then(res => res.json())
        .then(json =>
-       dispatch(heroesSuccess(json.results)))
+       dispatch(heroesSuccess(json.data)))
        .catch(err => dispatch(heroesFailure(err)));
     };
 }
